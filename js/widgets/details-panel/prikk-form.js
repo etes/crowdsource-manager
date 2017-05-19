@@ -257,6 +257,7 @@ define([
                 var relatedTable = array.filter(this.commentTable.relationships, function(item){return item.name === selectedLayerName;});
                 //this._foreignKeyField = this.commentTable.relationships[0].keyField;
                 this._foreignKeyField = relatedTable[0].keyField;
+
                 if (this.item.attributes[this._primaryKeyField]) {
                     featureData.attributes[this._foreignKeyField] = this.item.attributes[this._primaryKeyField];
                 }
@@ -320,6 +321,7 @@ define([
         */
         _updateComments: function (featureData) {
             //as we are updating feature we need object Id field inside for successful updation
+            featureData.attributes = this._removeAttributeFromObject(featureData.attributes, this._foreignKeyField);
             featureData.attributes[this.selectedLayer.objectIdField] = this.item.attributes[this.selectedLayer.objectIdField];
             // Update the comment to the comment table
             this.commentTable.applyEdits(null, [featureData], null, lang.hitch(this, function (addResult, updateResult, deleteResult) { //ignore jslint

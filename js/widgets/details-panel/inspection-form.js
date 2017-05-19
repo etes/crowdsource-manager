@@ -320,6 +320,7 @@ define([
         */
         _updateInspections: function (featureData) {
             //as we are updating feature we need object Id field inside for successful updation
+            featureData.attributes = this._removeAttributeFromObject(featureData.attributes, this._foreignKeyField);
             featureData.attributes[this.selectedLayer.objectIdField] = this.item.attributes[this.selectedLayer.objectIdField];
             // Update the inspection to the inspection table
             this.inspectionTable.applyEdits(null, [featureData], null, lang.hitch(this, function (addResult, updateResult, deleteResult) { //ignore jslint
