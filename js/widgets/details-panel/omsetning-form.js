@@ -218,7 +218,6 @@ define([
                 // create an empty array object
                 // featureData.attributes = {};
                 // for all the fields
-                console.log(featureData);
                 array.forEach(query(".omsetningFormQuestionare .form-control", this.enterOmsetningContainer), function (currentField) {
                     // get id of the field
                     key = domAttr.get(currentField, "id");
@@ -252,18 +251,15 @@ define([
                     featureData.attributes[this.config.reportedByField] = this.config.logInDetails.processedUserName;
                     editedFields.push(key);
                 }
-                console.log(featureData);
 
                 this._primaryKeyField = this.selectedLayer.relationships[2].keyField;
                 var selectedLayerName = this.selectedLayer.name;
                 var relatedTable = array.filter(this.omsetningTable.relationships, function(item){return item.name === selectedLayerName;});
                 //this._foreignKeyField = this.omsetningTable.relationships[0].keyField;
                 this._foreignKeyField = relatedTable[0].keyField;
-                //if (this.item.attributes[this._primaryKeyField]) {
+                if (this.item.attributes[this._primaryKeyField]) {
                     featureData.attributes[this._foreignKeyField] = this.item.attributes[this._primaryKeyField];
-                //}
-                console.log(relatedTable, featureData, this._foreignKeyField, this._primaryKeyField);
-                console.log(this.item);
+                }
                 if (this.addOmsetning) {
                     this._addNewOmsetning(featureData);
                 } else {
