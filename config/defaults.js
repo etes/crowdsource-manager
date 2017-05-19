@@ -19,7 +19,7 @@ define({
     // Default configuration settings for the application. This is where you'll define things like a bing maps key,
     // default group, default app color theme and more. These values can be overwritten by template configuration settings and url parameters.
     "appid": "",
-    "oauthappid": null,
+    //"oauthappid": "USbuqcw3KJj6YKqo",
     // Group templates must support a group url parameter. This will contain the id of the group.
     "group": "d5dadd3773b24944aede6b27bad4f0a5",
     // Enter the url to the proxy if needed by the application. See the 'Using the proxy page' help topic for details
@@ -56,9 +56,9 @@ define({
     // name of the application
     "applicationName": "Bevillinger i Fredrikstad",
     // application icon
-    "applicationIcon": "http://kart.fredrikstad.kommune.no/skjenkebevillinger/images/logo.png",
+    "applicationIcon": "https://kart.fredrikstad.kommune.no/skjenkebevillinger/images/logo.png",
     // application favicon icon
-    "applicationFavicon": "http://kart.fredrikstad.kommune.no/skjenkebevillinger/images/logo.png",
+    "applicationFavicon": "https://kart.fredrikstad.kommune.no/skjenkebevillinger/images/logo.png",
     // to display any null values
     "showNullValueAs": "",
     // to set zoom level of map when single feature is selected
