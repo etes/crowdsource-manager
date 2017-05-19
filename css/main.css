@@ -828,6 +828,11 @@ table {
     height: 100%;
 }
 
+/* hide esri logo*/
+.logo-med {
+  display: none !important;
+}
+
 .esriCTMapPanelWrapperContainer {
     width: 50%;
     height: 100%;
